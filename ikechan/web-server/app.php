@@ -21,9 +21,21 @@ $app->post('/messages', function (Request $request) use ($app) {
     $data = $app->validateRequestAsJson($request);
 
     $username = isset($data['username']) ? $data['username'] : '';
-    $body = isset($data['body']) ? $data['body'] : '';
+	$body = isset($data['body']) ? $data['body'] : '';
+
+	$result = array(
+		'daikichi',
+		'kichi',
+		'kyou'
+	);
+
+	if ($body === 'uranai')
+	{
+		$body = $result[rand() % 3];
+	}
 
     $createdMessage = $app->createMessage($username, $body, base64_encode(file_get_contents($app['icon_image_path'])));
+
 
     return $app->json($createdMessage);
 });
