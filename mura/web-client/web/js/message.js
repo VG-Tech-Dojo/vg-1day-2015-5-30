@@ -16,7 +16,7 @@ function sendMessage(body) {
         reloadMessages();
     };
     var error   = function() { console.log("error") };
-    postMessage(body, success, error);
+    postMessage("mura", body, success, error);
 }
 
 /**
@@ -36,6 +36,7 @@ function appendMessages(data) {
 function appendMessage(message) {
 	var escapeBody = $("<div/>").text(message.body).html();
 	var escapeIcon = $("<div/>").text(message.icon).html();
+	var escapeCreated_at = $("<div/>").text(message.created_at).html();
 
     var messageHTML = '<tr><td>' +
         '<div class="media message">'　+
@@ -43,6 +44,7 @@ function appendMessage(message) {
         '<img class="media-object" src="data:image/png;base64,' + escapeIcon + '" data-holder-rendered="true" style="width: 64px; height: 64px;">' +
         '</div>' +
         '<div class="media-body">' +
+		escapeCreated_at +
         '<h4 class="media-heading"></h4>' +
         escapeBody +
 	    '</div>' +
@@ -67,12 +69,12 @@ function getMessages(success, error) {
 /**
  * APIリクエストコメント投稿
  */
-function postMessage(body, success, error) {
+function postMessage(name, body, success, error) {
     var postMessageUri = "http://localhost:8888/messages";
     return $.ajax({
         type: "post",
         url: postMessageUri,
-        data: JSON.stringify({"username":"名前はまだない", "body":body}), 
+        data: JSON.stringify({"username":name, "body":body}), 
         dataType: "json",
         })
     .done(function(data) { success() })
