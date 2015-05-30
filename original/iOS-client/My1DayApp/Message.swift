@@ -11,6 +11,7 @@ import UIKit
 class Message {
     let body: String!
     let icon: UIImage?
+    //ここだけ変更(ありたく)
     // Mission1-1. created_at 用のインスタンス変数を追加
     
     init?(dictionary: [String: AnyObject]) {
