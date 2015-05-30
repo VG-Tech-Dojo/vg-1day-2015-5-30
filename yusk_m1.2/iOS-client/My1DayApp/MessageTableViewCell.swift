@@ -11,6 +11,7 @@ import UIKit
 class MessageTableViewCell: UITableViewCell {
     @IBOutlet weak private var iconImageView: UIImageView!
     @IBOutlet weak private var messageLabel: UILabel!
+    @IBOutlet weak private var nameLabel: UILabel!
     
     // Mission1-1 UILabel のインスタンス変数を追加
     @IBOutlet weak private var timeLabel: UILabel!
@@ -20,13 +21,15 @@ class MessageTableViewCell: UITableViewCell {
         self.iconImageView.image = nil
         self.messageLabel.text = nil
         // Mission1-1 UILabel のインスタンス変数を初期化
-        self.timeLabel.text = nil;
+        self.timeLabel.text = nil
+        self.nameLabel.text = nil
     }
     
     func setupComponentsWithMessage(message: Message) {
         self.iconImageView.image = message.icon
         self.messageLabel.text = message.body
         // Mission1-1 UILabel のインスタンス変数に created_at の値を代入
-        self.timeLabel.text = message.time;
+        self.timeLabel.text = message.time
+        self.nameLabel.text = message.username
     }
 }
