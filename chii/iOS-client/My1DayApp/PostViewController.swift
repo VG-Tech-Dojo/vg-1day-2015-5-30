@@ -12,11 +12,15 @@ protocol PostViewControllerDelagate : NSObjectProtocol {
     func postViewController(viewController : PostViewController, didTouchUpCloseButton: AnyObject)
 }
 
-class PostViewController: UIViewController {
+class PostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    var myImagePicker: UIImagePickerController!
+    
     @IBOutlet weak private var messageTextView: UITextView!
     weak var delegate: PostViewControllerDelagate?
     // Mission1-2 Storyboard から UITextField のインスタンス変数を追加
     @IBOutlet weak private var userNameTextView: UITextField!
+    
+    @IBOutlet weak var myImageView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +28,29 @@ class PostViewController: UIViewController {
     }
     
     // MARK: - IBAction
+    @IBAction func didTouchUpSelectImageButton(sender: AnyObject) {
+        self.pickImageFromLibrary()
+    }
     
+    // ライブラリから写真を選択する
+    func pickImageFromLibrary() {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
+            let controller = UIImagePickerController()
+            controller.delegate = self
+            controller.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            self.presentViewController(controller, animated: true, completion: nil)
+        }
+    }
+    
+    // 写真を選択した時に呼ばれる
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        if info[UIImagePickerControllerOriginalImage] != nil {
+            let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+            myImageView.image = image
+        }
+        picker.dismissViewControllerAnimated(true, completion: nil)
+    }
+
     @IBAction func didTouchUpCloseButton(sender: AnyObject) {
         self.messageTextView.resignFirstResponder()
         self.delegate?.postViewController(self, didTouchUpCloseButton: sender)
