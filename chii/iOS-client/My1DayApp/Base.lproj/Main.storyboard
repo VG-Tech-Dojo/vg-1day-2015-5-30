@@ -38,6 +38,7 @@
                                 <connections>
                                     <outlet property="iconImageView" destination="rB6-1N-vrf" id="qKn-zx-yfW"/>
                                     <outlet property="messageLabel" destination="RPy-Rd-KYT" id="6X3-KT-Lfn"/>
+                                    <outlet property="timeLabel" destination="k16-q2-dro" id="cbS-AC-rxD"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
