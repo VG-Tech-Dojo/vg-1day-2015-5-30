@@ -24,6 +24,11 @@
 		3ABA190A1B062C5B00C21087 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA19091B062C5B00C21087 /* Message.swift */; };
 		3ABA190C1B0633E800C21087 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA190B1B0633E800C21087 /* ImageHelper.swift */; };
 		3AF957B81B05067F00106729 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AF957B71B05067F00106729 /* logo.png */; };
+		BAFAF7FA1B19A1050005C619 /* Eins.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAFAF7F51B19A1050005C619 /* Eins.jpg */; };
+		BAFAF7FB1B19A1060005C619 /* Himi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAFAF7F61B19A1050005C619 /* Himi.jpg */; };
+		BAFAF7FC1B19A1060005C619 /* Nobu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAFAF7F71B19A1050005C619 /* Nobu.jpg */; };
+		BAFAF7FD1B19A1060005C619 /* Nui.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAFAF7F81B19A1050005C619 /* Nui.jpg */; };
+		BAFAF7FE1B19A1060005C619 /* Xavi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAFAF7F91B19A1050005C619 /* Xavi.jpg */; };
 		CE8066ED1ADDF6E3003A2D22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8066EC1ADDF6E3003A2D22 /* AppDelegate.swift */; };
 		CE8066F21ADDF6E3003A2D22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE8066F01ADDF6E3003A2D22 /* Main.storyboard */; };
 		CE8066F41ADDF6E3003A2D22 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8066F31ADDF6E3003A2D22 /* Images.xcassets */; };
@@ -52,6 +57,11 @@
 		3ABA19091B062C5B00C21087 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		3ABA190B1B0633E800C21087 /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		3AF957B71B05067F00106729 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		BAFAF7F51B19A1050005C619 /* Eins.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Eins.jpg; sourceTree = "<group>"; };
+		BAFAF7F61B19A1050005C619 /* Himi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Himi.jpg; sourceTree = "<group>"; };
+		BAFAF7F71B19A1050005C619 /* Nobu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Nobu.jpg; sourceTree = "<group>"; };
+		BAFAF7F81B19A1050005C619 /* Nui.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Nui.jpg; sourceTree = "<group>"; };
+		BAFAF7F91B19A1050005C619 /* Xavi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Xavi.jpg; sourceTree = "<group>"; };
 		CE8066E71ADDF6E3003A2D22 /* My1DayApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = My1DayApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8066EB1ADDF6E3003A2D22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE8066EC1ADDF6E3003A2D22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +117,19 @@
 			name = "Mission1-1&1-2";
 			sourceTree = "<group>";
 		};
+		BAFAF7F41B19A1050005C619 /* img */ = {
+			isa = PBXGroup;
+			children = (
+				BAFAF7F51B19A1050005C619 /* Eins.jpg */,
+				BAFAF7F61B19A1050005C619 /* Himi.jpg */,
+				BAFAF7F71B19A1050005C619 /* Nobu.jpg */,
+				BAFAF7F81B19A1050005C619 /* Nui.jpg */,
+				BAFAF7F91B19A1050005C619 /* Xavi.jpg */,
+			);
+			name = img;
+			path = "../../../../meronG/vg-1day-2015-5-30/original/iOS-client/img";
+			sourceTree = "<group>";
+		};
 		CE8066DE1ADDF6E3003A2D22 = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +151,7 @@
 		CE8066E91ADDF6E3003A2D22 /* My1DayApp */ = {
 			isa = PBXGroup;
 			children = (
+				BAFAF7F41B19A1050005C619 /* img */,
 				CE8066EC1ADDF6E3003A2D22 /* AppDelegate.swift */,
 				CE8066F51ADDF6E3003A2D22 /* LaunchScreen.xib */,
 				3AB32A491B0AD7F800FF89EE /* Misson1-1 */,
@@ -251,7 +275,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AF957B81B05067F00106729 /* logo.png in Resources */,
+				BAFAF7FC1B19A1060005C619 /* Nobu.jpg in Resources */,
+				BAFAF7FE1B19A1060005C619 /* Xavi.jpg in Resources */,
+				BAFAF7FD1B19A1060005C619 /* Nui.jpg in Resources */,
 				CE8066F21ADDF6E3003A2D22 /* Main.storyboard in Resources */,
+				BAFAF7FB1B19A1060005C619 /* Himi.jpg in Resources */,
+				BAFAF7FA1B19A1050005C619 /* Eins.jpg in Resources */,
 				CE8066F71ADDF6E3003A2D22 /* LaunchScreen.xib in Resources */,
 				CE8066F41ADDF6E3003A2D22 /* Images.xcassets in Resources */,
 			);
