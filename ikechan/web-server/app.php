@@ -23,18 +23,22 @@ $app->post('/messages', function (Request $request) use ($app) {
     $username = isset($data['username']) ? $data['username'] : '';
 	$body = isset($data['body']) ? $data['body'] : '';
 
-	$result = array(
-		'daikichi',
-		'kichi',
-		'kyou'
-	);
+	$pokemon = ['hitokage', 'hushigidane', 'zenigame'];
 
-	if ($body === 'uranai')
+	$hitokage = realpath(__DIR__.'/resource/'.$pokemon[0].'.jpg');
+	$hushigidane = realpath(__DIR__.'/resource/'.$pokemon[1].'.jpg');
+	$zenigame = realpath(__DIR__.'/resource/'.$pokemon[2].'.jpg');
+
+	if ($body == 'honoo')
 	{
-		$body = $result[rand() % 3];
+		$createdMessage = $app->createMessage($username, $pokemon[0], base64_encode(file_get_contents($hitokage)));
+	} else if ($body == 'kusa') {
+		$createdMessage = $app->createMessage($username, $pokemon[1], base64_encode(file_get_contents($hushigidane)));
+	} else if ($body == 'mizu') {
+		$createdMessage = $app->createMessage($username, $pokemon[2], base64_encode(file_get_contents($zenigame)));
 	}
 
-    $createdMessage = $app->createMessage($username, $body, base64_encode(file_get_contents($app['icon_image_path'])));
+    // $createdMessage = $app->createMessage($username, $body, base64_encode(file_get_contents($app['icon_image_path'])));
 
 
     return $app->json($createdMessage);
