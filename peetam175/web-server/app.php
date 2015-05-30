@@ -22,8 +22,10 @@ $app->post('/messages', function (Request $request) use ($app) {
 
     $username = isset($data['username']) ? $data['username'] : '';
     $body = isset($data['body']) ? $data['body'] : '';
+    $botname = 'bot';
 
     $createdMessage = $app->createMessage($username, $body, base64_encode(file_get_contents($app['icon_image_path'])));
+	$createdMessage = $app->createMessage($botname, $body, base64_encode(file_get_contents($app['icon_image_path'])));
 
     return $app->json($createdMessage);
 });
