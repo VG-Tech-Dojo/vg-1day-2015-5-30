@@ -21,6 +21,7 @@ class PostViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.messageTextView.becomeFirstResponder()
+        self.userName.placeholder = "ユーザー名"
     }
     
     // MARK: - IBAction
@@ -58,4 +59,9 @@ class PostViewController: UIViewController {
         }
         
     }
+    
+    
+    
+    
+    
 }
