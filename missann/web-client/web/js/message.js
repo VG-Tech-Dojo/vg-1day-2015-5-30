@@ -10,13 +10,14 @@ function reloadMessages() {
 /**
  * メッセージの投稿
  */
-function sendMessage(body) {
+function sendMessage(username, body) {
     var success = function() {
+        $(".message-username").val("");
         $(".message-body").val("");
         reloadMessages();
     };
     var error   = function() { console.log("error") };
-    postMessage(body, success, error);
+    postMessage(username, body, success, error);
 }
 
 /**
@@ -70,12 +71,12 @@ function getMessages(success, error) {
 /**
  * APIリクエストコメント投稿
  */
-function postMessage(body, success, error) {
+function postMessage(username, body, success, error) {
     var postMessageUri = "http://localhost:8888/messages";
     return $.ajax({
         type: "post",
         url: postMessageUri,
-        data: JSON.stringify({"username":"名前はまだない", "body":body}), 
+        data: JSON.stringify({"username":username,"body":body}), 
         dataType: "json",
         })
     .done(function(data) { success() })
