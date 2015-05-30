@@ -130,7 +130,35 @@ class MessageTableViewController: UITableViewController, PostViewControllerDelag
             
             tableView.editing = false
             
-            println("Delete")
+            
+            //ここがボタン押された時
+            
+            var id:Int!
+            var cell = tableView.cellForRowAtIndexPath(indexPath) as! MessageTableViewCell
+            id = cell.id
+            println(id)
+            
+            APIRequest.deleteMessage(id) {
+                [weak self] (data, response, error) -> Void in
+                
+                
+                if error != nil {
+                    // TODO: エラー処理
+                    println(error)
+                    return
+                }
+                
+                var decodeError: NSError?
+                let responseBody: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.allZeros, error: &decodeError)
+                if decodeError != nil{
+                    println(decodeError)
+                    return
+                }
+
+            
+            }
+            
+    
             
         }
         deleteButton.backgroundColor = UIColor.redColor()

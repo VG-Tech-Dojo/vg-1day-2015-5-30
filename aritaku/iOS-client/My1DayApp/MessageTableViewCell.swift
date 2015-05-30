@@ -14,6 +14,7 @@ class MessageTableViewCell: UITableViewCell {
     @IBOutlet weak private var username: UILabel!
     @IBOutlet weak private var date: UILabel!
     // Mission1-1 UILabel のインスタンス変数を追加
+    var id:Int!
     
     override func prepareForReuse() {
         self.iconImageView.image = nil
@@ -21,6 +22,7 @@ class MessageTableViewCell: UITableViewCell {
         self.username.text = nil
         self.date.text = nil
         // Mission1-1 UILabel のインスタンス変数を初期化
+        self.id = nil
     }
     
     func setupComponentsWithMessage(message: Message) {
@@ -29,5 +31,6 @@ class MessageTableViewCell: UITableViewCell {
         self.username.text = message.userName
         self.date.text = message.date
         // Mission1-1 UILabel のインスタンス変数に created_at の値を代入
+        self.id = message.id
     }
 }

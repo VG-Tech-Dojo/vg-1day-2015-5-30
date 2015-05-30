@@ -24,6 +24,7 @@
 		3ABA190A1B062C5B00C21087 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA19091B062C5B00C21087 /* Message.swift */; };
 		3ABA190C1B0633E800C21087 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA190B1B0633E800C21087 /* ImageHelper.swift */; };
 		3AF957B81B05067F00106729 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AF957B71B05067F00106729 /* logo.png */; };
+		5DBF87CA1B19AACD00AD9A5F /* DeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBF87C91B19AACD00AD9A5F /* DeleteButton.swift */; };
 		CE8066ED1ADDF6E3003A2D22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8066EC1ADDF6E3003A2D22 /* AppDelegate.swift */; };
 		CE8066F21ADDF6E3003A2D22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE8066F01ADDF6E3003A2D22 /* Main.storyboard */; };
 		CE8066F41ADDF6E3003A2D22 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8066F31ADDF6E3003A2D22 /* Images.xcassets */; };
@@ -52,6 +53,7 @@
 		3ABA19091B062C5B00C21087 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		3ABA190B1B0633E800C21087 /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		3AF957B71B05067F00106729 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		5DBF87C91B19AACD00AD9A5F /* DeleteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeleteButton.swift; path = My1DayApp/DeleteButton.swift; sourceTree = "<group>"; };
 		CE8066E71ADDF6E3003A2D22 /* My1DayApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = My1DayApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8066EB1ADDF6E3003A2D22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE8066EC1ADDF6E3003A2D22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 		CE8066DE1ADDF6E3003A2D22 = {
 			isa = PBXGroup;
 			children = (
+				5DBF87C91B19AACD00AD9A5F /* DeleteButton.swift */,
 				CE8066E91ADDF6E3003A2D22 /* My1DayApp */,
 				CE8066FF1ADDF6E3003A2D22 /* My1DayAppTests */,
 				CE8066E81ADDF6E3003A2D22 /* Products */,
@@ -275,6 +278,7 @@
 				3A7CDC921AEA88B5000FBC23 /* MessageTableViewCell.swift in Sources */,
 				3A7CDC901AEA7B12000FBC23 /* MessageTableViewController.swift in Sources */,
 				3ABA190A1B062C5B00C21087 /* Message.swift in Sources */,
+				5DBF87CA1B19AACD00AD9A5F /* DeleteButton.swift in Sources */,
 				3A877DA01B00E9D0002B726B /* APIRequest.swift in Sources */,
 				CE8066ED1ADDF6E3003A2D22 /* AppDelegate.swift in Sources */,
 				3ABA190C1B0633E800C21087 /* ImageHelper.swift in Sources */,
