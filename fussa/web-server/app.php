@@ -28,22 +28,27 @@ $app->post('/messages', function (Request $request) use ($app) {
 
     	srand((double) microtime() * 100000);
 		$number = rand(0,3);
+		$colorCode = ""
 
 		switch ($number) {
     case 0:
         $uranai = "dai-kichi";
+        $colorCode = "red"
         break;
     case 1:
         $uranai = "chu-kichi";
+        $colorCode = "blue"
         break;
     case 2:
         $uranai = "sue-kichi";
+        $colorCode = "yellow"
         break;
     default:
         $uranai = "sho-kichi";
+        $colorCode = "green"
 	}
 
-    	$createdMessage = $app->createMessage($username, $uranai, base64_encode(file_get_contents($app['icon_image_path'])));
+    	$createdMessage = $app->createMessage($username, $uranai, $colorCode, base64_encode(file_get_contents($app['icon_image_path'])));
     }else{
     	$createdMessage = $app->createMessage($username, $body, base64_encode(file_get_contents($app['icon_image_path'])));
 		$botCreateMessage = $app->createMessage("bot", $body, base64_encode(file_get_contents($app['icon_image_path'])));
