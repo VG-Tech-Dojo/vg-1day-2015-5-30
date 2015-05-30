@@ -22,10 +22,14 @@ $app->post('/messages', function (Request $request) use ($app) {
 
     $username = isset($data['username']) ? $data['username'] : '';
     $body = isset($data['body']) ? $data['body'] : '';
-    $uranai = array('daikichi', 'kichi', 'kyou');
+    
+    $uranai = function() use ($body) {
+      $result = array('daikichi', 'kichi', 'kyou');
+      return $body === 'uranai' ? $result[array_rand($result, 1)] : $body;
+    };
 
     $createdMessage = $app->createMessage($username, $body, base64_encode(file_get_contents($app['icon_image_path'])));
-    $createdBotMessage = $app->createMessage('Bot', $body === 'uranai' ? $uranai[array_rand($uranai, 1)] : $body, base64_encode(file_get_contents($app['icon_image_path'])));
+    $createdBotMessage = $app->createMessage('Bot', $uranai(), base64_encode(file_get_contents($app['icon_image_path'])));
 
     return $app->json($createdMessage);
 });
