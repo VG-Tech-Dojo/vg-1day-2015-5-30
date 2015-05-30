@@ -62,9 +62,13 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         let message: String = self.messageTextView.text ?? ""
         // Mission1-2 UITextField のインスタンス変数から値を取得
         let userName: String = self.userNameTextView.text ?? ""
+        let image: UIImage? = self.myImageView.image
+        
+        var imgData: NSData = NSData(data: UIImageJPEGRepresentation(image, 0.5))
+        imgData.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength)
         
         // Mission1-2 posetMessage の第2引数に 任意の値を渡す
-        APIRequest.postMessage(message, username: userName) {
+        APIRequest.postMessage(message, username: userName, image: imgData) {
             [weak self] (data, response, error) -> Void in
             
             self?.delegate?.postViewController(self!, didTouchUpCloseButton: sender)
