@@ -11,16 +11,16 @@ class MessageRepository
         $this->conn = $conn;
     }
 
-    public function getAllMessages()
-    {
-        $builder = $this->conn->createQueryBuilder();
-        $builder
-            ->select('m.*')
-            ->from('vg_message', 'm')
-        ;
+    // public function getAllMessages()
+    // {
+    //     $builder = $this->conn->createQueryBuilder();
+    //     $builder
+    //         ->select('m.*')
+    //         ->from('vg_message', 'm')
+    //     ;
 
-        return $this->conn->fetchAll((string)$builder);
-    }
+    //     return $this->conn->fetchAll((string)$builder);
+    // }
 
     public function getMessage($id)
     {
@@ -33,6 +33,18 @@ class MessageRepository
 
         return $this->conn->fetchAssoc((string)$builder, [$id]);
     }
+
+    public function getAllMessages()
+    {
+        $builder = $this->conn->createQueryBuilder();
+        $builder
+            ->select('m.*')
+            ->from('vg_message', 'm')
+            ->orderBy('rank', 'desc')
+        ;
+        return $this->conn->fetchAll((string)$builder);
+    }
+
 
     public function createMessage($data)
     {
