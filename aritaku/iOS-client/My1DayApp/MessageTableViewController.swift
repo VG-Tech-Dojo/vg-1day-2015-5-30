@@ -104,4 +104,38 @@ class MessageTableViewController: UITableViewController, PostViewControllerDelag
             self.reloadMessageTableView()
         }
     }
+    
+    
+    /*
+    Editableの状態にする.
+    */
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    /*
+    特定の行のボタン操作を有効にする.
+    */
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    }
+    
+    /*
+    Buttonを拡張する.
+    */
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
+        
+        
+        // Deleteボタン.
+        var deleteButton: UITableViewRowAction = UITableViewRowAction(style: .Normal, title: "Delete") { (action, index) -> Void in
+            
+            tableView.editing = false
+            
+            println("Delete")
+            
+        }
+        deleteButton.backgroundColor = UIColor.redColor()
+        
+        return [deleteButton]
+    }
+    
 }
