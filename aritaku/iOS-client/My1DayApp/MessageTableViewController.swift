@@ -104,4 +104,66 @@ class MessageTableViewController: UITableViewController, PostViewControllerDelag
             self.reloadMessageTableView()
         }
     }
+    
+    
+    /*
+    Editableの状態にする.
+    */
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    /*
+    特定の行のボタン操作を有効にする.
+    */
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    }
+    
+    /*
+    Buttonを拡張する.
+    */
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
+        
+        
+        // Deleteボタン.
+        var deleteButton: UITableViewRowAction = UITableViewRowAction(style: .Normal, title: "Delete") { (action, index) -> Void in
+            
+            tableView.editing = false
+            
+            
+            //ここがボタン押された時
+            
+            var id:Int!
+            var cell = tableView.cellForRowAtIndexPath(indexPath) as! MessageTableViewCell
+            id = cell.id
+            println(id)
+            
+            APIRequest.deleteMessage(id) {
+                [weak self] (data, response, error) -> Void in
+                
+                
+                if error != nil {
+                    // TODO: エラー処理
+                    println(error)
+                    return
+                }
+                
+                var decodeError: NSError?
+                let responseBody: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.allZeros, error: &decodeError)
+                if decodeError != nil{
+                    println(decodeError)
+                    return
+                }
+
+            
+            }
+            
+    
+            
+        }
+        deleteButton.backgroundColor = UIColor.redColor()
+        
+        return [deleteButton]
+    }
+    
 }
