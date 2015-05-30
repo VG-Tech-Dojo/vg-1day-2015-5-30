@@ -11,7 +11,6 @@ import UIKit
 class MessageTableViewController: UITableViewController, PostViewControllerDelagate {
     
     private var messages : [Message] = []
-    let myItems: NSMutableArray = ["TEST1", "TEST2", "TEST3"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,36 +20,16 @@ class MessageTableViewController: UITableViewController, PostViewControllerDelag
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
     }
     
-    override func setEditing(editing: Bool, animated: Bool) {
-        self.tableView.setEditing(editing, animated: true)
-        
-        if editing {
-            println("編集中")
-            let addButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addCell:")
-            self.navigationItem.setLeftBarButtonItem(addButton, animated: true)
-        } else {
-            println("通常モード")
-            self.navigationItem.setLeftBarButtonItem(nil, animated: true)
-        }
-    }
     
-    func addCell(sender: AnyObject) {
-        println("追加")
-        
-        // myItemsに追加.
-        myItems.addObject("add Cell")
-        
-        // TableViewを再読み込み.
-        self.tableView.reloadData()
-    }
-    
+    //追加(aritaku)
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         // 削除のとき.
         if editingStyle == UITableViewCellEditingStyle.Delete {
             println("削除")
             
+            //ここも微妙
             // 指定されたセルのオブジェクトをmyItemsから削除する.
-            myItems.removeObjectAtIndex(indexPath.row)
+            messages.removeAtIndex(indexPath.row)
             
             // TableViewを再読み込み.
             self.tableView.reloadData()
@@ -121,7 +100,7 @@ class MessageTableViewController: UITableViewController, PostViewControllerDelag
         return cell
     }
     
-        // MARK: - IBAction
+    // MARK: - IBAction
     
     @IBAction func didTouchUpOpenPostViewControllerButton(sender: AnyObject) {
         self.performSegueWithIdentifier("openPostViewController", sender: sender)
