@@ -12,8 +12,8 @@ class Message {
     let body: String!
     let icon: UIImage?
     let createdAt: String?
+    let name: String?
     // Mission1-1. created_at 用のインスタンス変数を追加
-    
     
     init?(dictionary: [String: AnyObject]) {
         // Mission1-1 Dictionary から key:created_at の値を取得
@@ -21,11 +21,13 @@ class Message {
             self.body = body
             self.icon = ImageHelper.imageWithBase64EncodedString(icon)
             self.createdAt = dictionary["created_at"] as? String
+            self.name = dictionary["username"] as? String
             // Mission1-1 Dictionary から取得した値を created_at 用のインスタンス変数に追加
         } else {
             self.body = nil
             self.icon = nil
             self.createdAt = nil
+            self.name = nil
             // Mission1-1 インスタンス変数を nil で初期化
             return nil
         }
