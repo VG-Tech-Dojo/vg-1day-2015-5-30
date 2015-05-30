@@ -82,7 +82,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4EN-Fz-DKa">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4EN-Fz-DKa">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D6R-pW-9cS">
@@ -112,28 +112,31 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="131455.png" translatesAutoresizingMaskIntoConstraints="NO" id="71b-O0-MO6">
-                                        <rect key="frame" x="3" y="103" width="63" height="63"/>
+                                        <rect key="frame" x="0.0" y="95" width="76" height="77"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="63" id="XRk-WS-gKv"/>
                                             <constraint firstAttribute="height" constant="63" id="jvw-IY-THj"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ポケモンのタイプを選ぶのじゃ！" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Igm-pf-d9n">
-                                        <rect key="frame" x="75" y="117" width="245" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <rect key="frame" x="74" y="117" width="245" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lhg-Dc-uxP">
-                                        <rect key="frame" x="74" y="141" width="238" height="44"/>
+                                        <rect key="frame" x="74" y="464" width="238" height="44"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1KX-0W-owR">
+                                        <rect key="frame" x="59" y="105" width="237" height="162"/>
+                                    </pickerView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="UTG-Ud-MBI"/>
+                                    <constraint firstAttribute="height" constant="568" id="UTG-Ud-MBI"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="568" id="uan-jV-Rgc"/>
                                 </constraints>
                             </view>
@@ -150,6 +153,7 @@
                     <connections>
                         <outlet property="messageTextView" destination="Lhg-Dc-uxP" id="Y5X-Cg-E1p"/>
                         <outlet property="nameTextField" destination="mjB-C3-sgA" id="E5V-eD-Hkg"/>
+                        <outlet property="zokuseiPicker" destination="1KX-0W-owR" id="JAi-WQ-v94"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P5w-qQ-jfU" userLabel="First Responder" sceneMemberID="firstResponder"/>
