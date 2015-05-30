@@ -42,7 +42,13 @@ $app->post('/messages', function (Request $request) use ($app) {
 
 return $app;
 
- function zeikomi($nedan) {
-     $nedan = $nedan * 1.05;
-	 return $nedan;
+ function zeikomi($body) {
+	if ($body === 'pokemon')
+	{
+		$tmp = rand() % 3;
+		if(tmp == 0){
+			$pokemon_img = realpath(/resource/hitokage.jpeg)
+		}
+	}
+//	 return $nedan;
  }
