@@ -12,16 +12,18 @@ class MessageTableViewCell: UITableViewCell {
     @IBOutlet weak private var iconImageView: UIImageView!
     @IBOutlet weak private var messageLabel: UILabel!
     // Mission1-1 UILabel のインスタンス変数を追加
-    
+    @IBOutlet weak private var DateTimeLabel: UILabel!
     override func prepareForReuse() {
         self.iconImageView.image = nil
         self.messageLabel.text = nil
         // Mission1-1 UILabel のインスタンス変数を初期化
+        self.DateTimeLabel.text = nil
     }
     
     func setupComponentsWithMessage(message: Message) {
         self.iconImageView.image = message.icon
         self.messageLabel.text = message.body
         // Mission1-1 UILabel のインスタンス変数に created_at の値を代入
+        self.DateTimeLabel.text = message.created_at
     }
 }
