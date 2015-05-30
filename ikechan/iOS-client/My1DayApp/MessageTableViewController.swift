@@ -35,6 +35,7 @@ class MessageTableViewController: UITableViewController, PostViewControllerDelag
                 return
             }
             
+            //JSON取得
             if let JSONObject: AnyObject! = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil), let JSONArray: [[String: AnyObject]] = self?.parseJSONObjectToArray(JSONObject) {
                     var messages: [Message] = []
                     for val: [String: AnyObject] in JSONArray {
