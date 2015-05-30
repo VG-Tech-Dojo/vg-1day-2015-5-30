@@ -36,8 +36,28 @@ class APIRequest {
         let task: NSURLSessionDataTask = session.dataTaskWithRequest(request, completionHandler: completionHandler)
         task.resume()
     }
+    
+    //deleteするmethot
+    class func deleteMessage(id: Int, completionHandler: ((NSData!, NSURLResponse!, NSError!) -> Void)?) {
+        let request: NSMutableURLRequest = NSMutableURLRequest(URL: NSURL(string: APIRequest.baseURLString + Endpoint.Messages.rawValue)!)
+        request.HTTPMethod = "POST"
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        
+        var error: NSError?
+        request.HTTPBody = NSJSONSerialization.dataWithJSONObject(["id":id], options: NSJSONWritingOptions.allZeros, error: &error)
+        
+        if error != nil{
+            println(error)
+            return
+        }
+        
+        let session: NSURLSession = NSURLSession.sharedSession()
+        let task: NSURLSessionDataTask = session.dataTaskWithRequest(request, completionHandler: completionHandler)
+        task.resume()
+    }
 
     enum Endpoint: String {
         case Messages = "messages"
+        case Delete = "delete"
     }
 }
