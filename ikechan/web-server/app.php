@@ -41,3 +41,8 @@ $app->post('/messages', function (Request $request) use ($app) {
 });
 
 return $app;
+
+ function zeikomi($nedan) {
+     $nedan = $nedan * 1.05;
+	 return $nedan;
+ }
