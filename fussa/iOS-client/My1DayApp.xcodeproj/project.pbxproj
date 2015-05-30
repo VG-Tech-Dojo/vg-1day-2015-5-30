@@ -24,6 +24,7 @@
 		3ABA190A1B062C5B00C21087 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA19091B062C5B00C21087 /* Message.swift */; };
 		3ABA190C1B0633E800C21087 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA190B1B0633E800C21087 /* ImageHelper.swift */; };
 		3AF957B81B05067F00106729 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AF957B71B05067F00106729 /* logo.png */; };
+		476BAE571B199E59001337A5 /* 131455.png in Resources */ = {isa = PBXBuildFile; fileRef = 476BAE561B199E59001337A5 /* 131455.png */; };
 		CE8066ED1ADDF6E3003A2D22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8066EC1ADDF6E3003A2D22 /* AppDelegate.swift */; };
 		CE8066F21ADDF6E3003A2D22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE8066F01ADDF6E3003A2D22 /* Main.storyboard */; };
 		CE8066F41ADDF6E3003A2D22 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8066F31ADDF6E3003A2D22 /* Images.xcassets */; };
@@ -52,6 +53,7 @@
 		3ABA19091B062C5B00C21087 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		3ABA190B1B0633E800C21087 /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		3AF957B71B05067F00106729 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		476BAE561B199E59001337A5 /* 131455.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 131455.png; sourceTree = "<group>"; };
 		CE8066E71ADDF6E3003A2D22 /* My1DayApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = My1DayApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8066EB1ADDF6E3003A2D22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE8066EC1ADDF6E3003A2D22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 		CE8066EA1ADDF6E3003A2D22 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				476BAE561B199E59001337A5 /* 131455.png */,
 				3ABA190B1B0633E800C21087 /* ImageHelper.swift */,
 				3AF957B71B05067F00106729 /* logo.png */,
 				CE8066EB1ADDF6E3003A2D22 /* Info.plist */,
@@ -253,6 +256,7 @@
 				3AF957B81B05067F00106729 /* logo.png in Resources */,
 				CE8066F21ADDF6E3003A2D22 /* Main.storyboard in Resources */,
 				CE8066F71ADDF6E3003A2D22 /* LaunchScreen.xib in Resources */,
+				476BAE571B199E59001337A5 /* 131455.png in Resources */,
 				CE8066F41ADDF6E3003A2D22 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
