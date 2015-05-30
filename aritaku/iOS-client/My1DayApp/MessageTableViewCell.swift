@@ -13,6 +13,7 @@ class MessageTableViewCell: UITableViewCell {
     @IBOutlet weak private var messageLabel: UILabel!
     @IBOutlet weak private var username: UILabel!
     @IBOutlet weak private var date: UILabel!
+    @IBOutlet weak var rank: UILabel!
     // Mission1-1 UILabel のインスタンス変数を追加
     
     override func prepareForReuse() {
@@ -20,6 +21,7 @@ class MessageTableViewCell: UITableViewCell {
         self.messageLabel.text = nil
         self.username.text = nil
         self.date.text = nil
+        self.rank.text = nil
         // Mission1-1 UILabel のインスタンス変数を初期化
     }
     
@@ -28,6 +30,7 @@ class MessageTableViewCell: UITableViewCell {
         self.messageLabel.text = message.body
         self.username.text = message.userName
         self.date.text = message.date
+        self.rank.text = message.rank
         // Mission1-1 UILabel のインスタンス変数に created_at の値を代入
     }
 }

@@ -143,19 +143,20 @@ class Application extends \Silex\Application
         return $this->transformMessageFormatForJsonApi($message);
     }
 
-    public function createMessage($username, $body, $icon)
+    public function createMessage($username, $body, $rank, $icon)
     {
         $id = $this['repository.message']->createMessage([
             'username' => $username,
             'body' => $body,
+            'rank' => $rank,
             'icon' => $icon,
         ]);
 
         return $this->getMessage($id);
     }
 
-    protected function getBaseTimezone()     
-    {                                        
+    protected function getBaseTimezone()
+    {
         if ($this->tz !== null) {
             return $this->tz;
         }

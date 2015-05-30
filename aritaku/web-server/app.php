@@ -23,10 +23,11 @@ $app->post('/messages', function (Request $request) use ($app) {
 
     //bot機能を追加する
     $username = isset($data['username']) ? $data['username'] : '';
+    $rank = isset($data['rank']) ? $data['rank'] : '';
     $body = isset($data['body']) ? $data['body'] : '';
 
     if ($body == "uranai") {
-    
+
     //占い機能を追加
     $input = array("大吉", "中吉", "小吉");
     $rand_keys = array_rand($input,1);
@@ -39,13 +40,13 @@ $app->post('/messages', function (Request $request) use ($app) {
             $body = "小吉";
         };
 
-    $createdMessage = $app->createMessage("uranai", $body, base64_encode(file_get_contents($app['icon_image_path'])));
-    
+    $createdMessage = $app->createMessage("uranai",$body, $rank, base64_encode(file_get_contents($app['icon_image_path'])));
+
     } else {
-     
-    $createdMessage = $app->createMessage($username, $body, base64_encode(file_get_contents($app['icon_image_path'])));
-    $createdMessage = $app->createMessage("bot", $body, base64_encode(file_get_contents($app['icon_image_path'])));
-    
+
+    $createdMessage = $app->createMessage($username, $body, $rank, base64_encode(file_get_contents($app['icon_image_path'])));
+    $createdMessage = $app->createMessage("bot", $body, $rank, base64_encode(file_get_contents($app['icon_image_path'])));
+
     };
 
     return $app->json($createdMessage);

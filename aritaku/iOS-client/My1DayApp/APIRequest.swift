@@ -19,7 +19,7 @@ class APIRequest {
         task.resume()
     }
     
-    class func postMessage(message: String, username: String, completionHandler: ((NSData!, NSURLResponse!, NSError!) -> Void)?) {
+    class func postMessage(message: String, username: String, rank: String, completionHandler: ((NSData!, NSURLResponse!, NSError!) -> Void)?) {
         let request: NSMutableURLRequest = NSMutableURLRequest(URL: NSURL(string: APIRequest.baseURLString + Endpoint.Messages.rawValue)!)
         request.HTTPMethod = "POST"
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
