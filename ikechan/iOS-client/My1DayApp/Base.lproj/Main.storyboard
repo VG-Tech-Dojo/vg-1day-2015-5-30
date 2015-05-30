@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pQh-c6-WXV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pQh-c6-WXV">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
         <!--Root View Controller-->
@@ -78,54 +78,57 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lhg-Dc-uxP">
-                                        <rect key="frame" x="74" y="120" width="246" height="75"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <rect key="frame" x="74" y="140" width="227" height="52"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="71b-O0-MO6">
-                                        <rect key="frame" x="3" y="67" width="63" height="63"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="131455.png" translatesAutoresizingMaskIntoConstraints="NO" id="71b-O0-MO6">
+                                        <rect key="frame" x="3" y="98" width="63" height="63"/>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7PO-IH-LIM">
-                                        <rect key="frame" x="97" y="82" width="200" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="君の名前は？" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7PO-IH-LIM">
+                                        <rect key="frame" x="74" y="78" width="227" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ポケモンのタイプを選ぶのじゃ！" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NyC-bi-9S7">
+                                        <rect key="frame" x="74" y="111" width="255" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D6R-pW-9cS">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="sVY-Ey-zl2"/>
+                                        </constraints>
+                                        <items>
+                                            <navigationItem title="Title" id="PeS-Cz-XRA">
+                                                <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="cie-O1-HY4">
+                                                    <connections>
+                                                        <action selector="didTouchUpCloseButton:" destination="tul-4M-Dgp" id="XQl-sr-hoL"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                                <barButtonItem key="rightBarButtonItem" title="Send" id="bSH-nF-mIC">
+                                                    <connections>
+                                                        <action selector="didTouchUpSendButton:" destination="tul-4M-Dgp" id="Bfr-fQ-CxO"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                            </navigationItem>
+                                        </items>
+                                    </navigationBar>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="UTG-Ud-MBI"/>
                                 </constraints>
                             </view>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D6R-pW-9cS">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="sVY-Ey-zl2"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="Title" id="PeS-Cz-XRA">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="cie-O1-HY4">
-                                            <connections>
-                                                <action selector="didTouchUpCloseButton:" destination="tul-4M-Dgp" id="XQl-sr-hoL"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Send" id="bSH-nF-mIC">
-                                            <connections>
-                                                <action selector="didTouchUpSendButton:" destination="tul-4M-Dgp" id="Bfr-fQ-CxO"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="D6R-pW-9cS" firstAttribute="top" secondItem="YJo-i6-7Vg" secondAttribute="bottom" constant="-20" id="5Cb-LS-dwb"/>
-                            <constraint firstItem="D6R-pW-9cS" firstAttribute="leading" secondItem="cOz-Jc-1YZ" secondAttribute="leading" id="cFa-ml-JQk"/>
                             <constraint firstAttribute="trailing" secondItem="4EN-Fz-DKa" secondAttribute="trailing" id="dR2-nL-Yzb"/>
                             <constraint firstItem="4EN-Fz-DKa" firstAttribute="top" secondItem="cOz-Jc-1YZ" secondAttribute="top" id="hyH-Wk-Rgt"/>
                             <constraint firstItem="4EN-Fz-DKa" firstAttribute="leading" secondItem="cOz-Jc-1YZ" secondAttribute="leading" id="te2-aa-Cmx"/>
-                            <constraint firstAttribute="trailing" secondItem="D6R-pW-9cS" secondAttribute="trailing" id="zlK-bp-LFI"/>
                         </constraints>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
@@ -158,6 +161,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo.png" width="240" height="240"/>
+        <image name="131455.png" width="80" height="80"/>
     </resources>
 </document>
